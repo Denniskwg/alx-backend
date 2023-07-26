@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 import csv
 import math
-from typing import List
-index_range = __import__('0-simple_helper_function').index_range
+from typing import List, Tuple
 """1-simple_pagination defines a class Server with methods
 dataset and get_page
 """
@@ -15,6 +14,14 @@ class Server:
 
     def __init__(self):
         self.__dataset = None
+
+    def index_range(page: int, page_size: int) -> Tuple[int, int]:
+        """return a tuple of size two containing a start
+        index and an end index corresponding to the range
+        of indexes to return in a list for those particular
+        pagination parameters.
+        """
+        return ((page - 1) * page_size, page_size * page)
 
     def dataset(self) -> List[List]:
         """Cached dataset
@@ -35,7 +42,7 @@ class Server:
         """
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page > 0
-        indexes = index_range(page, page_size)
+        indexes = self.index_range(page, page_size)
         data = self.dataset()
         if indexes[0] > (len(data) - page_size):
             return []
