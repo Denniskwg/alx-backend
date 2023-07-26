@@ -41,7 +41,11 @@ class Server:
             return lst
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
-        """returns a dict with HATEOAS
+        """returns a dict with hypermedia information about the
+        pagination including, page size, current page, next page to
+        start pagination after end of current page, previous page from
+        current page and total pages that can be viewed in using the
+        current page size
         """
         if len(self.get_page(page, page_size)) == 0:
             next_page = None

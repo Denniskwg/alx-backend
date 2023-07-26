@@ -28,7 +28,10 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """returns a sub list from a pagination
+        """returns a sub list containing data from a pagination
+        algorithm index_range which returns the indexes to
+        start pagination on the list. If input arguments are out of range
+        for the dataset, an empty list is be returned.
         """
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page > 0
