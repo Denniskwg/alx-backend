@@ -9,6 +9,9 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 
 class BasicCache(BaseCaching):
+    """BasicCache class inherits from BaseCaching
+    which is a caching system
+    """
     def __init__(self):
         """initializes the BasicCache class object
         """
