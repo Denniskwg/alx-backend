@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
-BaseCaching = __import__('base_caching').BaseCaching
-"""0-basic_cache
+"""0-basic_cache  inherits from BaseCaching and is
+a caching system. it defines methods put and get.
+You must use self.cache_data - dictionary from the
+parent class BaseCaching
+This caching system doesn’t have limit
 """
+BaseCaching = __import__('base_caching').BaseCaching
 
 
 class BasicCache(BaseCaching):
