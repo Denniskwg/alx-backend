@@ -30,10 +30,6 @@ class LRUCache(BaseCaching):
                 self.track = [key] + self.track
 
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-            #items = sorted(self.track.items(), key=lambda item: item[1])
-            #val = items[0][0]
-            #del self.cache_data[val]
-            #del self.track[val]
             val = self.track[BaseCaching.MAX_ITEMS]
             del self.cache_data[val]
             del self.track[BaseCaching.MAX_ITEMS]
